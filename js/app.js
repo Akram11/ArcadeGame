@@ -24,7 +24,7 @@ Enemy.prototype.render = function() {
 
 
 class Player {
-  //Set the inital location to the center buttom
+  //Set the inital location to the center bottom
   constructor() {
     this.x = 202;
     this.y = 387;
