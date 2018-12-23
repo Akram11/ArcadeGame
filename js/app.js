@@ -14,14 +14,12 @@ var Enemy = function(y, speed) {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
+// when the enemey reaches the end of the canvas, set the X to -100 (beggning)
 Enemy.prototype.update = function(dt) {
-  // You should multiply any movement by the dt parameter
-  // which will ensure the game runs at the same speed for
-  // all computers.
   if (this.x > 500){
     this.x = -100;
   }else {
-    this.x += 200 * dt * this.speed;
+    this.x += 150 * dt * this.speed;
   }
 };
 
@@ -30,9 +28,6 @@ Enemy.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
 
 class Player {
   //constructor
@@ -81,18 +76,7 @@ class Player {
         break;
     }
   }
-  //properties
 
-  //methods
-  //update
-  // update(){
-  //   console.log('update');
-  // }
-  //checkCollisions
-  //checkWin
-  //render
-
-  //handle input
   reset(){
     this.x = 202;
     this.y = 387;
