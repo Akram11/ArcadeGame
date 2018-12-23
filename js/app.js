@@ -1,12 +1,8 @@
 // Enemies our player must avoid
 var Enemy = function(y, speed) {
-  // Variables applied to each of our instances go here,
-  // we've provided one for you to get started
-
-  // The image/sprite for our enemies, this uses
-  // a helper we've provided to easily load images
   this.sprite = 'images/enemy-bug.png';
-  this.x = -100;
+  //set the initial X location to a random number so the game starts differently each time
+  this.x = Math.random() * (-100 - -200) + -200;
   this.y = y;
   this.move = 101;
   this.speed = speed;
