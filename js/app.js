@@ -7,8 +7,7 @@ var Enemy = function(y, speed) {
   this.move = 101;
   this.speed = speed;
 };
-
-// Update the enemy's position, required method for game
+// Update the enemy's position
 // Parameter: dt, a time delta between ticks
 // when the enemey reaches the end of the canvas, set the X to -100 (beggning)
 Enemy.prototype.update = function(dt) {
@@ -18,21 +17,21 @@ Enemy.prototype.update = function(dt) {
     this.x += 150 * dt * this.speed;
   }
 };
-
-// Draw the enemy on the screen, required method for game
+// Draw the enemy on the screen
 Enemy.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
 
 class Player {
-  //constructor
+  //Set the inital location to the center buttom
   constructor() {
     this.x = 202;
     this.y = 387;
     this.sprite = 'images/char-boy.png';
   }
 
+// Draw the Player on the screen
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
@@ -79,9 +78,6 @@ class Player {
   }
 }
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
 
 let allEnemies = [new Enemy(55, 2.5), new Enemy(55 + 83, 2.7), new Enemy(55 + 83 * 2, 0.2)];
 const player = new Player();
