@@ -29,6 +29,8 @@ class Player {
     this.x = 202;
     this.y = 387;
     this.sprite = 'images/char-boy.png';
+    this.xMovement = 101;
+    this.yMovement = 83;
   }
 
   // Draw the Player on the screen
@@ -61,22 +63,22 @@ class Player {
     switch (key) {
       case 'left':
         if (this.x > 0) {
-          this.x -= 101;
+          this.x -=   this.xMovement;
         }
         break;
       case 'right':
         if (this.x < 404) {
-          this.x += 101;
+          this.x +=   this.xMovement;
         }
         break;
       case 'up':
         if (this.y > 0) {
-          this.y -= 83;
+          this.y -= this.yMovement;
         }
         break;
       case 'down':
         if (this.y < 350) {
-          this.y += 83;
+          this.y += this.yMovement;
         }
         break;
     }
