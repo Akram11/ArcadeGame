@@ -8,6 +8,9 @@
 
 ## Instructions
 
+-To start the game open index.html file in your browser (chrome, firefox, safari etc.. ).
+no special programes or add-ons required.
+
 -The goal of this game is to for the player to the street and reach the water,
 while avoiding all the bugs.
 
