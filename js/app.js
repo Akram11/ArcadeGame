@@ -22,12 +22,20 @@ Enemy.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+Enemy.prototype.checkCollisions = function () {
+  if (this.y === player.y && this.x < player.x + player.width && this.x > player.x - player.width) {
+    player.reset();
+  }
+}
+
+
 
 class Player {
   //Set the inital location to the center bottom
   constructor() {
     this.x = 202;
     this.y = 387;
+    this.width = 50;
     this.sprite = 'images/char-boy.png';
     this.xMovement = 101;
     this.yMovement = 83;
@@ -44,12 +52,7 @@ class Player {
   // the width was calculated to suit the gameplay the best (+60 from the front and -50 from the rare)
   // the second if statments check if the player has reached the water (won).
   // in both cases -collision or winning- the game resets itself, setting the player back to the initial location.
-  update() {
-    for (let enemy of allEnemies) {
-      if (this.y === enemy.y && enemy.x - 50 < this.x && enemy.x + 60 > this.x) {
-        this.reset();
-      }
-    }
+  isWin() {
     if (this.y === -28) {
       this.reset();
     }
